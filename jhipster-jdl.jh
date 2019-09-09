@@ -1,0 +1,17 @@
+entity Person {
+	id Integer,
+    firstName String,
+    lastName String
+}
+
+entity Friend {
+	id Integer,
+    firstName String,
+    lastName String,
+    crazyness String
+}
+
+relationship OneToMany {
+	Person{pId} to Friend
+}
+
