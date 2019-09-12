@@ -1,24 +1,36 @@
 package com.bank.crditapp.service;
 
 import com.bank.crditapp.domains.Person;
+import com.bank.crditapp.repositories.PersonRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
+@Service
 public class PersonServicesImpl implements PersonServices {
+
+    private final PersonRepository personRepository;
+
+    public PersonServicesImpl(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
+
 
     @Override
     public Person save() {
+
         return null;
     }
 
     @Override
     public Person create(Person person) {
-        return null;
+        return personRepository.save(person);
     }
 
     @Override
-    public Person removing(int id) {
-        return null;
+    public void removing(Person person) {
+        personRepository.delete(person);
     }
 
     @Override
@@ -36,4 +48,13 @@ public class PersonServicesImpl implements PersonServices {
         return null;
     }
 
+    @Override
+    public Person getPerson(int id) {
+        return personRepository.getOne(id);
+    }
+
+    @Override
+    public List<Person> getAllPersons() {
+        return personRepository.findAll();
+    }
 }
