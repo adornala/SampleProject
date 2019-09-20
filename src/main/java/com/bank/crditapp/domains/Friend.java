@@ -5,21 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-@Entity
 public class Friend {
-
-    @Id
-    @Column(name = "botw_id")
     private int id;
 
     private String firstName;
 
     private String lastName;
 
-    @Column(name = "botw_crazyness")
     private String crazyness;
 
-    @ManyToOne
     private Person person;
 
     public int getId() {
@@ -61,4 +55,5 @@ public class Friend {
     public void setPerson(Person person) {
         this.person = person;
     }
+
 }

@@ -20,6 +20,14 @@ public class PersonServicesImpl implements PersonServices {
     @Override
     public Person save() {
 
+        Person per = new Person();
+
+
+
+
+
+        int i = per.getId();
+
         return null;
     }
 
@@ -56,5 +64,10 @@ public class PersonServicesImpl implements PersonServices {
     @Override
     public List<Person> getAllPersons() {
         return personRepository.findAll();
+    }
+
+    @Override
+    public List<Person> getAllRecordcsbyFAL(String fName, String lName) {
+        return null;
     }
 }

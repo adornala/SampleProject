@@ -25,4 +25,6 @@ public interface PersonServices {
 
     List<Person> getAllPersons();
 
+    List<Person> getAllRecordcsbyFAL(String fName, String lName);
+
 }
